@@ -5,8 +5,7 @@ Game sử dụng thư viện SDL và ngôn ngữ C++.
 Thuộc loại endless-running game.
 
 ## Cách chơi
-Sử dụng phím spacebar hoặc mũi tên lên xuống để tránh vật cản.
-Khi gặp trứng, ăn để được cộng điểm.
+Sử dụng phím spacebar hoặc mũi tên hướng lên để tránh vật cản.
 
 ## Credits
 * Audio
