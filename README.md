@@ -5,7 +5,7 @@ Game sử dụng thư viện SDL và ngôn ngữ C++.
 Thuộc loại endless-running game.
 
 ## Cách chơi
-Sử dụng phím spacebar hoặc mũi tên hướng lên để tránh vật cản.
+Sử dụng phím spacebar hoặc mũi tên hướng lên để cho nhân vật khủng long nhảy vàs tránh vật cản.
 
 ## Credits
 * Audio
