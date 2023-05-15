@@ -11,17 +11,17 @@ Patterns::Patterns(int _type)
 	type = _type;
 	if (type == IN_AIR_ENEMY)
 	{
-		posX = rand() % (SCREEN_WIDTH + ENEMY_POSITION_RANGE) + SCREEN_WIDTH;
-		posY = rand() % (ENEMY_MAX_HEIGHT - ENEMY_MIN_HEIGHT + 1) + ENEMY_MIN_HEIGHT;
+		posX = rand() % ENEMY_BAT_RANGE + SCREEN_WIDTH;
+		posY = rand() % (ENEMY_MIN_HEIGHT - ENEMY_MAX_HEIGHT + 1) + ENEMY_MIN_HEIGHT;
 	}
 	else if (type == ON_GROUND_ENEMY1)
 	{
-		posX = rand() % (SCREEN_WIDTH + ENEMY_POSITION_RANGE) + SCREEN_WIDTH;
+		posX = rand() % ENEMY_CACTUS1_RANGE + SCREEN_WIDTH;
 		posY = GROUND - 15 ;
 	}
 	else if (type == ON_GROUND_ENEMY2)
 	{
-		posX = rand() % (SCREEN_WIDTH + ENEMY_POSITION_RANGE) + SCREEN_WIDTH;
+		posX = rand() % + ENEMY_CACTUS2_RANGE + ENEMY_CACTUS1_RANGE + SCREEN_WIDTH;
 		posY = GROUND - 5 ;
 	}
 	PatternsTexture = nullptr;
@@ -35,7 +35,7 @@ Patterns::~Patterns()
 	eWidth = 0;
 	eHeight = 0;
 
-	type = 0;
+	type = -1;
 	if (PatternsTexture != nullptr)
 	{
 		PatternsTexture = nullptr;
@@ -81,7 +81,7 @@ void Patterns::Move(const int &acceleration)
 
 		if (type == IN_AIR_ENEMY)
 		{
-			posY = rand() % (ENEMY_MAX_HEIGHT - ENEMY_MIN_HEIGHT + 1) + ENEMY_MIN_HEIGHT;
+			posY = rand() % (ENEMY_MIN_HEIGHT - ENEMY_MAX_HEIGHT + 1) + ENEMY_MIN_HEIGHT;
 		}
 	}
 }
@@ -107,7 +107,10 @@ int Patterns::getType()
 	{
 		return ON_GROUND_ENEMY1;
 	}
-	else return ON_GROUND_ENEMY2;
+	else if (type == ON_GROUND_ENEMY2)
+	{
+		return ON_GROUND_ENEMY2;
+	}
 }
 
 int Patterns::getSpeed(const int &acceleration)

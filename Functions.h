@@ -13,25 +13,18 @@
 #include <vector>
 #include <ctime>
 
-#define MIX_CHANNEL -1
-
 #define TIME_MAX 1000
 #define GROUND 360
-#define MAX_HEIGHT 180
-
+#define MAX_HEIGHT 150
 
 #define SPEED_INCREASEMENT 1
 #define SCORE_INCREASEMENT 1
 #define TIME_INCREASEMENT 1
 #define FRAME_INCREASEMENT 1
 
-#define GROUND_SPEED 5.5
-#define ENEMY_SPEED 5.5
+#define BACKGROUND_SPEED 5
+#define ENEMY_SPEED 5
 #define MAX_ENEMY_WIDTH 80
-
-
-#define IS_REPEATITIVE -1
-#define NOT_REPEATITIVE 0
 
 #define SMALL_BUTTON 1
 #define COMMON_BUTTON 2
@@ -57,18 +50,19 @@ const int EGG_HEIGHT = 48;
 
 const int TITLE_POSX = 0;
 const int TITLE_POSY = 0;
-const int PLAY_BUTON_POSX = 400;
-const int PLAY_BUTTON_POSY= 250;
-const int HELP_BUTTON_POSX = 400;
-const int HELP_BUTTON_POSY = 300;
-const int EXIT_BUTTON_POSX = 400;
-const int EXIT_BUTTON_POSY = 350;
-const int BACK_BUTTON_POSX = 40;
-const int BACK_BUTTON_POSY = 200;
-const int PAUSE_BUTTON_POSX = 31;
-const int PAUSE_BUTTON_POSY = 29;
-const int CONTINUE_BUTTON_POSX = 31;
-const int CONTINUE_BUTTON_POSY = 29;
+const int PLAY_BUTTON_X = 400;
+const int PLAY_BUTTON_Y= 250;
+const int HELP_BUTTON_X = 400;
+const int HELP_BUTTON_Y = 300;
+const int EXIT_BUTTON_X = 400;
+const int EXIT_BUTTON_Y = 350;
+const int BACK_BUTTON_X = 40;
+const int BACK_BUTTON_Y = 200;
+const int PAUSE_BUTTON_X = 31;
+const int PAUSE_BUTTON_Y = 29;
+const int MS_BUTTON_X = 100;
+const int MS_BUTTON_Y = 29;
+
 
 const int TEXT_2_POSX = 670;
 const int TEXT_2_POSY = 70;
@@ -80,6 +74,7 @@ const int HIGH_SCORE_POSY = 70;
 
 const int RUNNING_FRAMES = 6;
 const int FLYING_FRAMES = 4;
+const int EGG_FRAMES = 4;
 const int RENDER_DRAW_COLOR = 0Xff;
 
 enum ButtonSprite

@@ -23,7 +23,7 @@ void Character::handleEvent(SDL_Event& e, Mix_Chunk *gJump)
 			{
 				if (onGround())
 				{
-					Mix_PlayChannel(MIX_CHANNEL, gJump, NOT_REPEATITIVE);
+					Mix_PlayChannel(-1, gJump, 0);
 					status = JUMP;
 				}
 			}
@@ -32,7 +32,7 @@ void Character::handleEvent(SDL_Event& e, Mix_Chunk *gJump)
 			{
 				if (onGround())
 				{
-					Mix_PlayChannel(MIX_CHANNEL, gJump, NOT_REPEATITIVE);
+					Mix_PlayChannel(-1, gJump, 0);
 					status = JUMP;
 				}
 			}
