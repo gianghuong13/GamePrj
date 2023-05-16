@@ -47,17 +47,14 @@ bool checkCollision(Character character,
 
 	if (pattern.getType() == ON_GROUND_ENEMY1 || pattern.getType() == ON_GROUND_ENEMY2)
 	{
-		const int TRASH_PIXEL_1 = 20;
-		const int TRASH_PIXEL_2 = 20;
-
 		int leftB = pattern.getPosX();
 		int rightB = pattern.getPosX() + pattern.getWidth();
 		int topB = pattern.getPosY();
 		int bottomB = pattern.getPosY() + pattern.getHeight();
 
-		if (rightA - TRASH_PIXEL_1 >= leftB && leftA + TRASH_PIXEL_1 <= rightB)
+		if (rightA - 20 >= leftB && leftA + 20 <= rightB)
 		{
-			if (bottomA - TRASH_PIXEL_2 >= topB)
+			if (bottomA - 20 >= topB)
 			{
 				collide = true;
 			}
@@ -65,22 +62,19 @@ bool checkCollision(Character character,
 	}
 	else if (pattern.getType() == IN_AIR_ENEMY)
 	{
-		const int TRASH_PIXEL_1 = 25;
-		const int TRASH_PIXEL_2 = 20;
-
 		int leftB = pattern.getPosX();
 		int rightB = pattern.getPosX() + pattern_clip->w;
 		int topB = pattern.getPosY();
 		int bottomB = pattern.getPosY() + pattern_clip->h;
 
-		if (rightA - TRASH_PIXEL_1 >= leftB && leftA + TRASH_PIXEL_1 <= rightB)
+		if (rightA - 25 >= leftB && leftA + 25 <= rightB)
 		{
-			if (topA + TRASH_PIXEL_2 <= bottomB && topA + TRASH_PIXEL_2 >= topB)
+			if (topA + 20 <= bottomB && topA + 20 >= topB)
 			{
 				collide = true;
 			}
 			
-			if (bottomA - TRASH_PIXEL_2 >= topB && bottomA - TRASH_PIXEL_2 <= bottomB)
+			if (bottomA - 20 >= topB && bottomA - 20 <= bottomB)
 			{
 				collide = true;
 			}
@@ -200,7 +194,7 @@ bool checkEggCollision(Character character,
 		int topB = egg.getPosY();
 		int bottomB = egg.getPosY() + egg_clip->h;
 
-		if (rightA - 15 >= leftB && leftA + 15 <= rightB)
+		if (rightA - 20 >= leftB && leftA + 20 <= rightB)
 		{
 			if ((topA + 15 <= bottomB && topA + 15 >= topB) || bottomA - 15 <= bottomB && bottomA - 15 >= topB)
 			{
