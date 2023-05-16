@@ -70,7 +70,7 @@ void Egg::loadFromFile(std::string path, SDL_Renderer* gRenderer)
 void Egg::Move(const int &acceleration)
 {
 	posX += -(EGG_SPEED + acceleration);
-	if (posX + MAX_ENEMY_WIDTH < 0)
+	if (posX + MAX_EGG_WIDTH < 0)
 	{
 		posX = rand() % + EGG_RANGE + SCREEN_WIDTH;
 

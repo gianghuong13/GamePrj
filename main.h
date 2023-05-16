@@ -22,8 +22,8 @@ Mix_Chunk* gGainEgg = nullptr;
 Mix_Chunk* gLose = nullptr;
 
 SDL_Rect gPlayButton[BUTTON_TOTAL];
-SDL_Rect gHelpButton[BUTTON_TOTAL];
-SDL_Rect gExitButton[BUTTON_TOTAL];
+SDL_Rect gOptionsButton[BUTTON_TOTAL];
+SDL_Rect gQuitButton[BUTTON_TOTAL];
 SDL_Rect gBackButton[BUTTON_TOTAL];
 SDL_Rect gCharacterClips[RUNNING_FRAMES];
 SDL_Rect gEnemyClips[FLYING_FRAMES];
@@ -35,8 +35,8 @@ LTexture gInstructionTexture;
 LTexture gBackgroundTexture;
 LTexture gCharacterTexture;
 LTexture gPlayButtonTexture;
-LTexture gHelpButtonTexture;
-LTexture gExitButtonTexture;
+LTexture gOptionsButtonTexture;
+LTexture gQuitButtonTexture;
 LTexture gBackButtonTexture;
 LTexture gLoseTexture;
 LTexture gScoreTexture;
@@ -51,8 +51,8 @@ LTexture gEggGainedScore;
 LTexture gDeadTexture;
 
 Button PlayButton(PLAY_BUTTON_X, PLAY_BUTTON_Y);
-Button HelpButton(HELP_BUTTON_X, HELP_BUTTON_Y);
-Button ExitButton(EXIT_BUTTON_X, EXIT_BUTTON_Y);
+Button OptionsButton(HELP_BUTTON_X, HELP_BUTTON_Y);
+Button QuitButton(EXIT_BUTTON_X, EXIT_BUTTON_Y);
 Button BackButton(BACK_BUTTON_X, BACK_BUTTON_Y);
 
 Character character;
@@ -236,7 +236,7 @@ bool loadMedia()
 				}
 			}
 
-			if (!gHelpButtonTexture.loadFromFile("imgs/button/largebutton2.png", gRenderer))
+			if (!gOptionsButtonTexture.loadFromFile("imgs/button/largebutton2.png", gRenderer))
 			{
 				std::cout << "Failed to load help_button image" << std::endl;
 				success = false;
@@ -245,14 +245,14 @@ bool loadMedia()
 			{
 				for (int i = 0; i < BUTTON_TOTAL; ++i)
 				{
-					gHelpButton[i].x = 125 * i;
-					gHelpButton[i].y = 0;
-					gHelpButton[i].w = 125;
-					gHelpButton[i].h = 40;
+					gOptionsButton[i].x = 125 * i;
+					gOptionsButton[i].y = 0;
+					gOptionsButton[i].w = 125;
+					gOptionsButton[i].h = 40;
 				}
 			}
 
-			if (!gExitButtonTexture.loadFromFile("imgs/button/largebutton3.png", gRenderer))
+			if (!gQuitButtonTexture.loadFromFile("imgs/button/largebutton3.png", gRenderer))
 			{
 				std::cout << "Failed to load exit_button image" << std::endl;
 				success = false;
@@ -261,10 +261,10 @@ bool loadMedia()
 			{
 				for (int i = 0; i < BUTTON_TOTAL; ++i)
 				{
-					gExitButton[i].x = 125 * i;
-					gExitButton[i].y = 0;
-					gExitButton[i].w = 125;
-					gExitButton[i].h = 40;
+					gQuitButton[i].x = 125 * i;
+					gQuitButton[i].y = 0;
+					gQuitButton[i].w = 125;
+					gQuitButton[i].h = 40;
 				}
 			}
 
@@ -332,8 +332,8 @@ void close()
 	gInstructionTexture.Free();
 	gCharacterTexture.Free();
 	gPlayButtonTexture.Free();
-	gHelpButtonTexture.Free();
-	gExitButtonTexture.Free();
+	gOptionsButtonTexture.Free();
+	gQuitButtonTexture.Free();
 	gBackButtonTexture.Free();
 	gLoseTextTexture.Free();
 	gScoreTexture.Free();

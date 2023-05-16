@@ -9,17 +9,17 @@ void handlePlayButton(SDL_Event* e,
     bool& Play,
     Mix_Chunk* gClick);
 
-void handleHelpButton(SDL_Event* e,
+void handleOptionsButton(SDL_Event* e,
     SDL_Rect(&gBackButton)[BUTTON_TOTAL],
-    Button& HelpButton,
+    Button& OptionsButton,
     Button& BackButton,
     LTexture gInstructionTexture,
     LTexture gBackButtonTexture,
     SDL_Renderer* gRenderer,
-    bool& Quit_game,
+    bool& Quitgame,
     Mix_Chunk* gClick);
 
-void handleExitButton(SDL_Event* e,
-    Button& ExitButton,
+void handleQuitButton(SDL_Event* e,
+    Button& QuitButton,
     bool& Quit,
     Mix_Chunk* gClick);

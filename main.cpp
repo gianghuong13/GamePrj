@@ -31,12 +31,12 @@ int main(int argc, char* argv[])
 					bool quitGame = false;
 					handlePlayButton(&e_mouse, PlayButton, quitMenu, isPlayed, gClick);
 						
-					handleHelpButton(&e_mouse, gBackButton,
-									 HelpButton, BackButton, 
+					handleOptionsButton(&e_mouse, gBackButton,
+									 OptionsButton, BackButton, 
 									 gInstructionTexture, gBackButtonTexture,
 									 gRenderer, quitGame, gClick);
 
-					handleExitButton(&e_mouse, ExitButton, quitMenu, gClick);
+					handleQuitButton(&e_mouse, QuitButton, quitMenu, gClick);
 
 					if (quitGame == true)
 					{
@@ -49,11 +49,11 @@ int main(int argc, char* argv[])
 				SDL_Rect* currentClip_Play = &gPlayButton[PlayButton.currentSprite];
 				PlayButton.Render(currentClip_Play, gRenderer, gPlayButtonTexture);
 
-				SDL_Rect* currentClip_Help = &gHelpButton[HelpButton.currentSprite];
-				HelpButton.Render(currentClip_Help, gRenderer, gHelpButtonTexture);
+				SDL_Rect* currentClip_Help = &gOptionsButton[OptionsButton.currentSprite];
+				OptionsButton.Render(currentClip_Help, gRenderer, gOptionsButtonTexture);
 
-				SDL_Rect* currentClip_Exit = &gExitButton[ExitButton.currentSprite];
-				ExitButton.Render(currentClip_Exit, gRenderer, gExitButtonTexture);
+				SDL_Rect* currentClip_Exit = &gQuitButton[QuitButton.currentSprite];
+				QuitButton.Render(currentClip_Exit, gRenderer, gQuitButtonTexture);
 
 				SDL_RenderPresent(gRenderer);
 			}
@@ -68,7 +68,7 @@ int main(int argc, char* argv[])
 				int frameEnemy = 0;
 				int frameEgg = 0;
 				int egggained = 0;
-				
+				int scrollingOffset = 0;
 				std::string highscore = getHighScoreFromFile("highscore.txt");
 				
 				SDL_Event e;
@@ -81,7 +81,7 @@ int main(int argc, char* argv[])
 				Mix_PlayMusic(gMusic, -1);
 				generateEnemy(enemy1, enemy2, enemy3, gEnemyClips, gRenderer);
 				generateEgg(egg, gEggClips, bigegg, gBigEggClips, gRenderer);
-				int scrollingOffset = 0;
+				
 								
 
 				bool quit = false;

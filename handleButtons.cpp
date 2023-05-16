@@ -32,25 +32,25 @@ void handlePlayButton(SDL_Event* e,
 	}
 }
 
-void handleHelpButton(SDL_Event* e,
+void handleOptionsButton(SDL_Event* e,
 	SDL_Rect(&gBackButton)[BUTTON_TOTAL],
-	Button& HelpButton, 
+	Button& OptionsButton, 
 	Button& BackButton, 
 	LTexture gInstructionTexture,
 	LTexture gBackButtonTexture, 
 	SDL_Renderer *gRenderer, 
-	bool &Quit_game, 
+	bool &Quitgame, 
 	Mix_Chunk *gClick)
 {
-	if (HelpButton.isInside(e, COMMON_BUTTON))
+	if (OptionsButton.isInside(e, COMMON_BUTTON))
 	{
 		switch (e->type)
 		{
 		case SDL_MOUSEMOTION:
-			HelpButton.currentSprite = BUTTON_MOUSE_OVER;
+			OptionsButton.currentSprite = BUTTON_MOUSE_OVER;
 			break;
 		case SDL_MOUSEBUTTONDOWN:
-			HelpButton.currentSprite = BUTTON_MOUSE_OVER;
+			OptionsButton.currentSprite = BUTTON_MOUSE_OVER;
 			Mix_PlayChannel(-1, gClick, 0);
 
 			bool ReadDone = false;
@@ -61,7 +61,7 @@ void handleHelpButton(SDL_Event* e,
 					if (e->type == SDL_QUIT)
 					{
 						ReadDone = true;
-						Quit_game = true;
+						Quitgame = true;
 						close();
 					}
 
@@ -99,31 +99,31 @@ void handleHelpButton(SDL_Event* e,
 	}
 	else
 	{
-		HelpButton.currentSprite = BUTTON_MOUSE_OUT;
+		OptionsButton.currentSprite = BUTTON_MOUSE_OUT;
 	}
 }
 
-void handleExitButton(SDL_Event* e,
-	Button& ExitButton,
+void handleQuitButton(SDL_Event* e,
+	Button& QuitButton,
 	bool& Quit,
 	Mix_Chunk* gClick)
 {
-	if (ExitButton.isInside(e, COMMON_BUTTON))
+	if (QuitButton.isInside(e, COMMON_BUTTON))
 	{
 		switch (e->type)
 		{
 		case SDL_MOUSEMOTION:
-			ExitButton.currentSprite = BUTTON_MOUSE_OVER;
+			QuitButton.currentSprite = BUTTON_MOUSE_OVER;
 			break;
 		case SDL_MOUSEBUTTONDOWN:
 			Quit = true;
-			ExitButton.currentSprite = BUTTON_MOUSE_OVER;
+			QuitButton.currentSprite = BUTTON_MOUSE_OVER;
 			Mix_PlayChannel(-1, gClick, 0);
 			break;
 		}
 	}
 	else
 	{
-		ExitButton.currentSprite = BUTTON_MOUSE_OUT;
+		QuitButton.currentSprite = BUTTON_MOUSE_OUT;
 	}
 }
